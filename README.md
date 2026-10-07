@@ -28,6 +28,12 @@ docs/DESIGN.md             How it works and why
 run.py                     Entry point
 ```
 
+## Screenshot
+
+The app running locally: AST comparison of two different functions (similarity 0.381) and a license prediction.
+
+![App screenshot](docs/screenshot.png)
+
 ## Getting started
 
 ```bash
