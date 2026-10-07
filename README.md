@@ -30,9 +30,15 @@ run.py                     Entry point
 
 ## Screenshot
 
-The app running locally: AST comparison of two different functions (similarity 0.381) and a license prediction.
+The app running locally, comparing code with the AST method and predicting a license.
 
-![App screenshot](docs/screenshot.png)
+Different code scores low:
+
+![Different code, low similarity](docs/screenshot.png)
+
+A renamed copy scores high (same logic, different variable names):
+
+![Renamed copy, very likely copied](docs/screenshot-copied.png)
 
 ## Getting started
 
