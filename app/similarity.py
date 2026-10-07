@@ -14,6 +14,7 @@ An optional ``embedding_similarity`` uses CodeBERT embeddings when the
 from __future__ import annotations
 
 import ast
+import textwrap
 import re
 from difflib import SequenceMatcher
 from typing import List, Optional
@@ -48,7 +49,8 @@ def _ratio(a: List[str], b: List[str]) -> float:
 
 def ast_sequence(code: str) -> List[str]:
     """Return the node-type sequence of a Python program (raises SyntaxError)."""
-    tree = ast.parse(code)
+    # Pasted snippets are often indented; dedent so they still parse as Python.
+    tree = ast.parse(textwrap.dedent(code))
     return [type(node).__name__ for node in ast.walk(tree)]
 
 

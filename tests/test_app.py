@@ -37,6 +37,11 @@ class SimilarityTests(unittest.TestCase):
     def test_different_code_scores_lower(self):
         self.assertLess(similarity.ast_similarity(ORIGINAL, DIFFERENT), 0.6)
 
+    def test_indented_python_still_uses_ast(self):
+        a = "    def f(x):\n        return x + 1"
+        b = "    def g(y):\n        return y + 1"
+        self.assertEqual(similarity.compare(a, b)["method"], "ast")
+
     def test_token_fallback_for_non_python(self):
         a = "int sum(int a, int b) { return a + b; }"
         b = "int add(int x, int y) { return x + y; }"
