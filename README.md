@@ -37,6 +37,8 @@ pip install -r requirements.txt
 python run.py                    # open http://127.0.0.1:5000
 ```
 
+**macOS note:** AirPlay Receiver uses port 5000 and shows "403 Forbidden". Run `PORT=5001 python run.py` and open http://127.0.0.1:5001 instead (or turn off AirPlay Receiver in System Settings).
+
 The license model trains automatically on first use. To train it manually: `python -m app.license_model`.
 
 ### Run the tests
